@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { ContextGlobal } from '../Components/utils/global.context';
 
 
 
@@ -7,37 +8,48 @@ import { useParams } from 'react-router-dom';
 
 const Detail = () => {
 
-  const [user,setUser] = useState({})
-  const {id} = useParams()
+  const [user, setUser] = useState({})
+  const { id } = useParams()
   // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
   // Aquí podrías hacer una llamada a una API para obtener la información del dentista
 
-  const URL='https://jsonplaceholder.typicode.com/users/'
-  
-  useEffect(()=>{
-  
-  async function fetchDataAsync(){
-    const response = await fetch(URL+ id);
-    const data = await response.json();
-    setUser(data);
-  }
-  fetchDataAsync();
-  
+  const URL = 'https://jsonplaceholder.typicode.com/users/'
+
+  useEffect(() => {
+
+    async function fetchDataAsync() {
+      const response = await fetch(URL + id);
+      const data = await response.json();
+      setUser(data);
+    }
+    fetchDataAsync();
+
   }, [id]);
   
+  const { Theme } = useContext(ContextGlobal)
   return (
-    <>
-      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
-      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
-    <h1>Detail Dentist {id}  </h1>
-    <ul>
-        <li>Nombre: {user.name}</li>
-        <li>Email: {user.email}</li>
-        <li>Teléfono: {user.phone}</li>
-        <li>Sitio web: {user.website}</li>
-      </ul>
-      
-    </>
+    <div className='detail' style={{ background: Theme.backgroundHome, color: Theme.color }}>
+
+      <h1>Detalles del dentista {id}  </h1>
+      <table>
+        <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Website</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>{user.name}</td>
+              <td>{user.email}</td>
+              <td>{user.phone}</td>
+              <td>{user.website}</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
   )
 }
 

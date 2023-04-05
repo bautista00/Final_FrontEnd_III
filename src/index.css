@@ -1,122 +1,155 @@
+
+
+          /* General */
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	
 }
-
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",monospace;
 }
-.favButton{
-  background-color: rgba(136, 136, 136, 0.116);
-  padding: 10px;
-  border: none;
-  width: 100%;
-  cursor: pointer;
+.home, .contact, .detail, .favs {
+    padding: 2rem;
 }
 
-h1{
-  text-align: center;
+
+
+
+        /* Navbar */
+
+
+.navbar {
+	background-color: rgb(230, 230, 215);
+}
+nav {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
 }
 
-nav{
-  display: flex;
-  width: 80vw;
-  justify-content: flex-start;
-  padding: 1rem;
+
+nav div {
+	display: flex;
+	width: 20vw;
+	align-items: center;
+	justify-content: space-around;
 }
 
-a{
-  color: #000;
-  text-decoration: none;
-  margin: 5px;
-  cursor: pointer;
+nav div i {
+    font-size: 2rem;
+    cursor: pointer;
 }
-a:hover{
-  color: rgb(136, 136, 136);
-} 
+
+
+      /* Footer */
+
 
 footer {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  position: relative;
-  bottom: 0;
-  width: 90%;
-  height: 40px;
-  margin-top: 2rem;
+	background-color: rgb(230, 230, 215);
+	display: flex;
+	text-align: center;
+	padding: 2rem 0;
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	height: 40px;
 }
 
-footer > img{
-  width: 200px;
-  margin: 0;
-}
-footer > p{
-  margin: 0;
-  padding-top: 0.7rem;
+
+        /* Home */
+
+
+.card-grid {
+	display: flex;
+	justify-content: flex-start;
+	gap: 1rem;
+	width: 80vw;
+	height: auto;
+	flex-wrap: wrap;
+	margin: 0 auto;
 }
 
-form{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 300px;
-  height: 100px;
-  margin: 0 auto;
+.card {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	align-items: center;
+	width: 200px;
+	padding: 0.5rem 0.5rem 0 0.5rem;
+	border: 0.5px solid rgb(19, 18, 18);
 }
 
-.card{
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-  /* width: 200px; */
-  padding: 0.5rem 0.5rem 0 0.5rem;
-  border: 0.5px solid rgb(136, 136, 136);
+.card img {
+	width: 200px;
 }
 
-.card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
-}
 
-.card-grid{
-  display: flex;
-  justify-content: space-evenly;
-  gap: 1rem;
-  width: 90vw;
-  height: auto;
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
+
+            /* Details */
+
 
 table {
- border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    display: table;
-    border: 1px solid #ccc;
-
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	display: table;
+	border: 1px solid #ccc;
 }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+td,th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+ 	 background-color: #dddddd;
 }
 
-.dark{
-  background-color: #12121296;
-  color: white;
+
+.favButton {
+	padding: 10px;
+	border: none;
+	width: 100%;
+	cursor: pointer;
 }
-.dark > a {
-  color: white;
+
+.eliminarButton{
+	border: none;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	cursor: pointer;
+}
+
+h1 {
+  	text-align: center;
+}
+
+a {
+    color: inherit;
+	text-decoration: none;
+	font-size: 20px;
+	margin: 5px;
+	cursor: pointer;
+}
+a:hover {
+	color: rgb(136, 136, 136);
+}
+
+
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 300px;
+	height: 100px;
+	margin: 0 auto;
 }

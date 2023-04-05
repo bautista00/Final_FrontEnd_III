@@ -6,25 +6,26 @@ import Favs from "./Routes/Favs";
 import Detail from "./Routes/Detail";
 import Contact from "./Routes/Contact";
 import Footer from "./Components/Footer";
+import { ContextProvider } from "./Components/utils/global.context";
 
 
 
 function App() {
+ 
+ 
   return (
-      <div className="App">
-         <Navbar/>
-       
+       <ContextProvider>
+       <Navbar/>
          <Routes>
           <Route path="/" element={<Home/>}></Route>
           <Route path="/home" element={<Home/>}></Route>
           <Route path="/favs" element={<Favs/>}></Route>
           <Route path="/detail/:id" element={<Detail/>}></Route>
           <Route path="/contact" element={<Contact/>}></Route>
-         
          </Routes>
-    
         <Footer/>
-      </div>
+       </ContextProvider>  
+     
   );
 }
 

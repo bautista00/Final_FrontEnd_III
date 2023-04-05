@@ -27,7 +27,7 @@ const Form = () => {
   }
 
   return (
-    <div>
+    <div className="form">
       
           <form onSubmit={handleSubmit}>
             <label >Name:</label>
