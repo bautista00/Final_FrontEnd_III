@@ -3,10 +3,10 @@ import React from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 
 
-
 const Card = ({ name, username, id , show , eliminarCard}) => {
+
   const navigate = useNavigate()
- 
+  
   const addFav = ()=>{
   
   const cardsGuardadas= JSON.parse(localStorage.getItem('DentistFav') || '[]')
@@ -30,7 +30,6 @@ const eliminar = () => {
 
   return (
      <div className="card">
-      
         <Link to={"/detail/"+id}>
         <img src="./images/doctor.jpg" alt="Doctor img" />
         <h2>{name}</h2>

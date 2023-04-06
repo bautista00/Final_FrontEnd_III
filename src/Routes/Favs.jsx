@@ -15,7 +15,8 @@ const Favs = () => {
 
   if(cardsGuardadas === []){
     cardsGuardadas = [user, setUser]
-  }else{
+  }
+  else{
     let parsedFavs = JSON.parse(cardsGuardadas)
     cardsGuardadas = parsedFavs
   }
@@ -26,8 +27,6 @@ const Favs = () => {
     localStorage.setItem('DentistFav', JSON.stringify(nuevasCards))
     navigate('/home')
   }
-
-
 
   localStorage.setItem('DentistFav', JSON.stringify(cardsGuardadas))
   
