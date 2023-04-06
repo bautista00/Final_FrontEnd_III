@@ -78,6 +78,11 @@ footer div:nth-child(1) p {
     width: 7vw;
 }
 
+.fa-brands {
+    font-size: 2rem;
+    margin-left: 0.5vw;
+	cursor: pointer;
+}
 
 
         /* Home */
